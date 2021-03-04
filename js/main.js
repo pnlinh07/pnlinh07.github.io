@@ -53,7 +53,7 @@ $(function () {
     // Create images for slides
     var slides = [];
     for (var i = 1; i <= 18; i++) {
-        slides[i] = {src: 'images/' + i + '.jpg'}
+        slides[i] = {src: 'images/' + i + '.JPG'}
     }
 
     $("body").vegas({

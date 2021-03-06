@@ -1,3 +1,42 @@
+$(function () {
+    var textAnimate = eval(Jscex.compile("async", function () {
+        var together = new Date();
+        var year = 2020, month = 11, day = 17;
+        together.setFullYear(year, month - 1, day);
+        together.setHours(0);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        while (true) {
+            timeElapse(together);
+            $await(Jscex.Async.sleep(1000));
+        }
+    }));
+
+    var runAsync = eval(Jscex.compile("async", function () {
+        textAnimate().start();
+    }));
+
+    runAsync().start();
+
+    // Create images for slides
+    var slides = [];
+
+    for (var i = 0; i <= 51; i++) {
+        slides.push({src: 'images/ltlove_' + i +'.jpg'});
+    }
+
+    $("body").vegas({
+        slides: slides,
+        shuffle: true,
+        delay: 2000,
+        cover: true,
+        overlay: 'images/overlays/05.png',
+        transition: 'fade'
+    });
+});
+
 function timeElapse(date) {
     var current = Date();
     var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
@@ -26,40 +65,3 @@ function timeElapse(date) {
 
     $('#js-timelove').html(result);
 }
-
-
-$(function () {
-    var textAnimate = eval(Jscex.compile("async", function () {
-        var together = new Date();
-        var year = 2020, month = 11, day = 17;
-        together.setFullYear(year, month - 1, day);
-        together.setHours(0);
-        together.setMinutes(0);
-        together.setSeconds(0);
-        together.setMilliseconds(0);
-
-        while (true) {
-            timeElapse(together);
-            $await(Jscex.Async.sleep(1000));
-        }
-    }));
-
-    var runAsync = eval(Jscex.compile("async", function () {
-        textAnimate().start();
-    }));
-
-    runAsync().start();
-
-    // Create images for slides
-    var slides = [];
-    for (var i = 1; i <= 18; i++) {
-        slides[i] = {src: 'images/' + i + '.JPG'}
-    }
-
-    $("body").vegas({
-        slides: slides,
-        shuffle: true,
-        delay: 4000,
-        overlay: 'images/overlays/05.png'
-    });
-});

@@ -30,7 +30,7 @@ $(function () {
     $("body").vegas({
         slides: slides,
         shuffle: true,
-        delay: 2000,
+        delay: 4000,
         cover: true,
         overlay: 'images/overlays/05.png',
         transition: 'fade'

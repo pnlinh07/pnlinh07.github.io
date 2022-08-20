@@ -23,8 +23,8 @@ $(function () {
     // Create images for slides
     var slides = [];
 
-    for (var i = 0; i <= 51; i++) {
-        slides.push({src: 'images/ltlove_' + i +'.jpg'});
+    for (var i = 0; i < 2; i++) {
+        slides.push({src: 'images/lt_' + i +'.jpg'});
     }
 
     $("body").vegas({

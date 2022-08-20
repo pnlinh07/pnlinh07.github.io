@@ -23,7 +23,7 @@ $(function () {
     // Create images for slides
     var slides = [];
 
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < 3; i++) {
         slides.push({src: 'images/lt_' + i +'.jpg'});
     }
 
